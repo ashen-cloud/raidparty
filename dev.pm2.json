@@ -7,7 +7,9 @@
       "watch": true,
       "max_memory_restart": "1G",
       "env": {
-        "NODE_ENV": "development"
+        "NODE_ENV": "development",
+        "ACCESS_TOKEN_SECRET": "testsecret",
+        "REFRESH_TOKEN_SECRET": "testrefreshsecret"
       }
     }
   ]

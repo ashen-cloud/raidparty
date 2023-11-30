@@ -1,16 +1,19 @@
 import { connect, Schema, model, Document } from 'mongoose'
+import bcrypt from 'bcrypt'
 
-interface IUser extends Document {
+export interface IUser extends Document {
   name: string
   email: string
+  password: string
 }
 
-const userSchema = new Schema<IUser>({
-  name: String,
-  email: String
+const UserSchema = new Schema<IUser>({
+  name: { type: String, require: true },
+  email: { type: String, require: true },
+  password: { type: String, require: true },
 })
 
-export const User = model<IUser>('User', userSchema) 
+export const User = model<IUser>('User', UserSchema) 
 
 const MONGO_URI = 'mongodb://127.0.0.1:27017/raidparty'
 
